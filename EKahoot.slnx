@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EKahoot.Core/EKahoot.Core.csproj" />
+  <Project Path="EKahoot.Tests/EKahoot.Tests.csproj" />
+</Solution>

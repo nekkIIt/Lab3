@@ -1,0 +1,11 @@
+I:\Laboratories\OPI\lb3\EKahoot.Core\bin\Debug\net10.0\EKahoot.Core.deps.json
+I:\Laboratories\OPI\lb3\EKahoot.Core\bin\Debug\net10.0\EKahoot.Core.dll
+I:\Laboratories\OPI\lb3\EKahoot.Core\bin\Debug\net10.0\EKahoot.Core.pdb
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.GeneratedMSBuildEditorConfig.editorconfig
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.AssemblyInfoInputs.cache
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.AssemblyInfo.cs
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.csproj.CoreCompileInputs.cache
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.dll
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\refint\EKahoot.Core.dll
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\EKahoot.Core.pdb
+I:\Laboratories\OPI\lb3\EKahoot.Core\obj\Debug\net10.0\ref\EKahoot.Core.dll
