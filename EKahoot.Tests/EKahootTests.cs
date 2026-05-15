@@ -14,20 +14,20 @@ namespace EKahoot.Tests
         [Fact]
         public void ValidateAnswer_CorrectIndex_ReturnsTrue()
         {
-            // Arrange (Підготовка даних)
+            // Arrange (Техніка: EP, Позитивний)
             var question = new Question { Options = new List<string> { "A", "B", "C", "D" }, CorrectOptionIndex = 1 };
             
-            // Act (Виконання дії)
+            // Act 
             bool result = question.ValidateAnswer(1);
             
-            // Assert (Перевірка результату)
+            // Assert 
             Assert.True(result);
         }
 
         [Fact]
         public void ValidateAnswer_IncorrectIndex_ReturnsFalse()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Позитивний - верхня межа валідних)
             var question = new Question { Options = new List<string> { "A", "B", "C", "D" }, CorrectOptionIndex = 1 };
             
             // Act 
@@ -40,17 +40,17 @@ namespace EKahoot.Tests
         [Fact]
         public void ValidateAnswer_NegativeIndex_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Негативний - нижче нуля)
             var question = new Question { Options = new List<string> { "A", "B", "C", "D" } };
             
-            // Act & Assert (Для винятків дія і перевірка робляться разом)
+            // Act & Assert 
             Assert.Throws<ArgumentOutOfRangeException>(() => question.ValidateAnswer(-1));
         }
 
         [Fact]
         public void ValidateAnswer_IndexOutOfRange_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Негативний - дорівнює Count)
             var question = new Question { Options = new List<string> { "A", "B", "C", "D" } };
             
             // Act & Assert 
@@ -60,13 +60,12 @@ namespace EKahoot.Tests
         [Fact]
         public void ValidateAnswer_EmptyOptions_ThrowsException()
         {
-            // Arrange (Перевірка на порожній список відповідей)
+            // Arrange (Техніка: BVA, Негативний - пусті дані)
             var question = new Question { Options = new List<string>() };
             
             // Act & Assert 
             Assert.Throws<InvalidOperationException>(() => question.ValidateAnswer(1));
         }
-
 
         // ==========================================
         // Тести для Result.CalculatePoints
@@ -75,7 +74,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculatePoints_InstantResponse_ReturnsMaxPoints()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Позитивний - мінімальний час)
             var result = new Result();
             
             // Act 
@@ -88,7 +87,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculatePoints_LastSecondResponse_ReturnsHalfPoints()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Позитивний - максимальний час)
             var result = new Result();
             
             // Act 
@@ -101,7 +100,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculatePoints_TimeExceeded_ReturnsZero()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Позитивний - поза межами ліміту)
             var result = new Result();
             
             // Act 
@@ -114,7 +113,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculatePoints_NegativeTime_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Негативний - негативний час)
             var result = new Result();
             
             // Act & Assert 
@@ -124,13 +123,12 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculatePoints_NegativeTimeLimit_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Негативний - негативний ліміт)
             var result = new Result();
             
             // Act & Assert 
             Assert.Throws<ArgumentException>(() => result.CalculatePoints(5.0f, 0.0f));
         }
-
 
         // ==========================================
         // Тести для GameSession.CalculateFinalScore
@@ -139,7 +137,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculateFinalScore_ValidResults_ReturnsSum()
         {
-            // Arrange 
+            // Arrange (Техніка: EP, Позитивний)
             var session = new GameSession();
             var results = new List<Result>
             {
@@ -157,7 +155,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculateFinalScore_EmptyList_ReturnsZero()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Позитивний - мінімальна кількість)
             var session = new GameSession();
             var results = new List<Result>();
             
@@ -171,7 +169,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculateFinalScore_NegativeScoreInList_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: EP, Негативний)
             var session = new GameSession();
             var results = new List<Result>
             {
@@ -186,7 +184,7 @@ namespace EKahoot.Tests
         [Fact]
         public void CalculateFinalScore_NullList_ThrowsException()
         {
-            // Arrange 
+            // Arrange (Техніка: BVA, Негативний - відсутність об'єкта)
             var session = new GameSession();
             
             // Act & Assert 
