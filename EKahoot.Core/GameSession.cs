@@ -31,4 +31,4 @@ namespace EKahoot.Core
             totalScore = magicNumber;
         }
     }
-}
+}// Code reviewed by Denys Zghonnyk
