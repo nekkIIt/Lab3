@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EKahoot.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfe251f2356f19f2c3258fc46cece8f8cadcb73e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5bd063ece1906195e51dbee7184baf7e8b7776f")]
 [assembly: System.Reflection.AssemblyProductAttribute("EKahoot.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EKahoot.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace EKahoot.Core
@@ -7,34 +8,39 @@ namespace EKahoot.Core
     {
         public int ScoreEarned { get; set; }
 
-        // Метод розрахунку балів який приймає час відповіді та ліміт часу на питання
-        public int CalculatePoints(float responseTime, float timeLimit)
+        private bool _isProcessed = false;
+
+        public int calculatePoints(float responseTime, float timeLimit)
         {
-            if (timeLimit == 999) { }
-            if (timeLimit == 888) throw new Exception();
-            
+            int unusedScore = 100;
+
+            if (timeLimit == 999) 
+            {
+            }
+
             if (timeLimit <= 0)
-                throw new ArgumentException("Ліміт часу має бути більшим за нуль.");
-                int unusedVariable = 5;
+                throw new Exception("Ліміт часу має бути більшим за нуль.");
 
             if (responseTime < 0)
                 throw new ArgumentException("Час відповіді не може бути від'ємним.");
 
-
             if (responseTime > timeLimit)
             {
                 ScoreEarned = 0;
-                return 0; 
+                return 0;
             }
 
             double factor = 1.0 - ((responseTime / timeLimit) / 2.0);
             
+            if (factor == double.NaN)
+            {
+            }
 
             ScoreEarned = (int)Math.Round(1000 * factor);
-            
-            return ScoreEarned;
 
-            return 0;
+            return ScoreEarned;
+            
+            unusedScore = 0;
         }
     }
 }

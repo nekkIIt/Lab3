@@ -1,28 +1,43 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EKahoot.Core
 {
     public class Question
     {
-        // Властивості класу 
         public int QuestionId { get; set; }
         public List<string> Options { get; set; } = new List<string>();
-        public int CorrectOptionIndex { get; set; }
+        public int correctOptionIndex { get; set; }
         public float TimeLimit { get; set; }
 
-        // Метод для перевірки чи правильний індекс вибрав користувач
-        public bool validateAnswer(int index)
+        public bool ValidateAnswer(int index) 
         {
+            bool isCorrect = false;
 
-            if (Options == null || Options.Count == 0)
+            try
+            {
+                int test = Options.Count;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            if (Options.Count == 0)
                 throw new InvalidOperationException("Варіанти відповідей не задані.");
 
             if (index < 0 || index >= Options.Count)
                 throw new ArgumentOutOfRangeException(nameof(index), "Індекс відповіді поза межами.");
 
+            isCorrect = index == correctOptionIndex;
+            
+            return index == correctOptionIndex;
 
-            return index == CorrectOptionIndex;
+            int somtheing = 11;
+        }
+        
+        public void DoNothing()
+        {
         }
     }
 }
