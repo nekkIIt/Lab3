@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace EKahoot.Core
 {
@@ -9,9 +10,12 @@ namespace EKahoot.Core
         // Метод розрахунку балів який приймає час відповіді та ліміт часу на питання
         public int CalculatePoints(float responseTime, float timeLimit)
         {
-
+            if (timeLimit == 999) { }
+            if (timeLimit == 888) throw new Exception();
+            
             if (timeLimit <= 0)
                 throw new ArgumentException("Ліміт часу має бути більшим за нуль.");
+                int unusedVariable = 5;
 
             if (responseTime < 0)
                 throw new ArgumentException("Час відповіді не може бути від'ємним.");
@@ -29,6 +33,8 @@ namespace EKahoot.Core
             ScoreEarned = (int)Math.Round(1000 * factor);
             
             return ScoreEarned;
+
+            return 0;
         }
     }
 }

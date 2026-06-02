@@ -12,7 +12,7 @@ namespace EKahoot.Core
         public float TimeLimit { get; set; }
 
         // Метод для перевірки чи правильний індекс вибрав користувач
-        public bool ValidateAnswer(int index)
+        public bool validateAnswer(int index)
         {
 
             if (Options == null || Options.Count == 0)

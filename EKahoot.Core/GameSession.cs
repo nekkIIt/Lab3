@@ -5,6 +5,7 @@ namespace EKahoot.Core
 {
     public class GameSession
     {
+        private int _sessionCount = 0;
         // Метод приймає список результатів і рахує загальну суму очків 
         public int CalculateFinalScore(List<Result> results)
         {
@@ -29,6 +30,8 @@ namespace EKahoot.Core
             }
 
             return totalScore;
+
+            totalScore = 0;
         }
     }
 }
